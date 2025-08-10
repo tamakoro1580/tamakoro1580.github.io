@@ -1,0 +1,88 @@
+﻿<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>おみくじ</title>
+</head>
+<body>
+  <p><br></p>
+  <!-- ここに本文 -->
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>ぱんだちゃんおみくじ</title>
+<style>
+body {
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+    text-align: center;
+    background-color: #fffaf5;
+    color: #333;
+}
+h1 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ffa6b1;
+}
+.result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+img {
+    max-width: 250px;
+    margin-top: 15px;
+}
+.share {
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1>ぱんだちゃんおみくじ</h1>
+<p><a href="index.html">top</a></p>
+<p>ボタンを押して今日の運勢を占ってみよう♪</p>
+<button onclick="drawOmikuji()">おみくじを引く</button>
+
+<div class="result" id="result"></div>
+<div id="image"></div>
+<div class="share" id="share"></div>
+
+<script>
+function drawOmikuji() {
+    const results = [
+        {text:"大吉！今日は最高の日！", img:"01.png"},
+        {text:"中吉。穏やかに過ごせそう", img:"02.png"},
+        {text:"小吉。小さなラッキーがあるかも", img:"03.png"},
+        {text:"吉。何事も順調", img:"04.png"},
+        {text:"凶…無理せず休もう", img:"05.png"}
+    ];
+
+    const r = Math.floor(Math.random() * results.length);
+    const omikuji = results[r];
+
+    document.getElementById("result").innerText = omikuji.text;
+    document.getElementById("image").innerHTML = `<img src="${omikuji.img}" alt="ぱんだちゃん">`;
+
+    const tweetText = encodeURIComponent(`今日のぱんだちゃんおみくじ結果は「${omikuji.text}」でした！ #ぱんだちゃんおみくじ`);
+    const tweetUrl = encodeURIComponent(window.location.href);
+    document.getElementById("share").innerHTML =
+        `<a href="https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}" target="_blank">Xで結果をシェアする</a>`;
+}
+</script>
+
+</body>
+</html>

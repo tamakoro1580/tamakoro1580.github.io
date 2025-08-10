@@ -1,76 +1,39 @@
-<!DOCTYPE html>
-<html lang="ja">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta charset="UTF-8">
-<title>ぱんだちゃんおみくじ</title>
-<style>
-body {
-    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    text-align: center;
-    background-color: #fffaf5;
-    color: #333;
+<meta content="ja" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>たまころ堂</title>
+<style type="text/css">
+.auto-style1 {
+	text-align: center;
 }
-h1 {
-    font-size: 2em;
-    margin-top: 20px;
-}
-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    background-color: #ffb6c1;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #ffa6b1;
-}
-.result {
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-img {
-    max-width: 250px;
-    margin-top: 15px;
-}
-.share {
-    margin-top: 20px;
+.auto-style2 {
+	text-align: center;
+	font-size: large;
 }
 </style>
 </head>
-<body>
 
-<h1>ぱんだちゃんおみくじ</h1>
-<p>ボタンを押して今日の運勢を占ってみよう♪</p>
-<button onclick="drawOmikuji()">おみくじを引く</button>
+<body style="background-color: #FFFAF5">
 
-<div class="result" id="result"></div>
-<div id="image"></div>
-<div class="share" id="share"></div>
-
-<script>
-function drawOmikuji() {
-    const results = [
-        {text:"大吉！今日は最高の日！", img:"01.png"},
-        {text:"中吉。穏やかに過ごせそう", img:"02.png"},
-        {text:"小吉。小さなラッキーがあるかも", img:"03.png"},
-        {text:"吉。何事も順調", img:"04.png"},
-        {text:"凶…無理せず休もう", img:"05.png"}
-    ];
-
-    const r = Math.floor(Math.random() * results.length);
-    const omikuji = results[r];
-
-    document.getElementById("result").innerText = omikuji.text;
-    document.getElementById("image").innerHTML = `<img src="${omikuji.img}" alt="ぱんだちゃん">`;
-
-    const tweetText = encodeURIComponent(`今日のぱんだちゃんおみくじ結果は「${omikuji.text}」でした！ #ぱんだちゃんおみくじ`);
-    const tweetUrl = encodeURIComponent(window.location.href);
-    document.getElementById("share").innerHTML =
-        `<a href="https://twitter.com/intent/tweet?text=${tweetText}&url=${tweetUrl}" target="_blank">Xで結果をシェアする</a>`;
-}
-</script>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="auto-style1">
+<img alt="トップ画像" height="400" src="top.jpg" width="400" />&nbsp;</p>
+<p class="auto-style2"><strong>たまころ堂</strong></p>
+<table style="width: 100%">
+	<tr>
+		<td>■　<a href="about.htm">ご案内</a><br />
+		■　<a href="omikuji.htm">ぱんだちゃんおみくじ</a>（無料）<br />
+		■　<a href="shop.html">ぱんだショップ</a><br />
+		■　<a href="https://note.com/tamakoro_1580" target="_blank" rel="noopener noreferrer">ブログ</a><br />
+		■　<a href="kantei.htm">個人鑑定</a></td>
+	</tr>
+</table>
+<p>&nbsp;</p>
 
 </body>
+
 </html>
